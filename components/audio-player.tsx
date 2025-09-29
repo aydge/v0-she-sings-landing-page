@@ -7,9 +7,18 @@ import { Slider } from "@/components/ui/slider"
 import { Card } from "@/components/ui/card"
 
 const tracks = [
-  { title: "Tickets At The Door", src: "/audio/track1.mp3" },
-  { title: "Anna Rose", src: "/audio/track2.mp3" },
-  { title: "Josie, Run", src: "/audio/track3.mp3" },
+  { 
+    title: "Tickets at The Door", 
+    src: "/audio/Tickets at The Door.mp3"
+  },
+  { 
+    title: "Anna Rose", 
+    src: "/audio/Anna Rose.m4a"
+  },
+  { 
+    title: "Josie Run", 
+    src: "/audio/Josie Run.m4a"
+  },
 ]
 
 export function AudioPlayer() {
@@ -19,6 +28,7 @@ export function AudioPlayer() {
   const [duration, setDuration] = useState(0)
   const [volume, setVolume] = useState(1)
   const [isMuted, setIsMuted] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const audioRef = useRef<HTMLAudioElement>(null)
 
   useEffect(() => {
@@ -30,19 +40,26 @@ export function AudioPlayer() {
     const handleEnded = () => {
       if (currentTrack < tracks.length - 1) {
         setCurrentTrack(currentTrack + 1)
-      } else {
-        setIsPlaying(false)
+        } else {
+          setIsPlaying(false)
+        }
       }
+
+    const handleError = () => {
+      setError("Failed to load audio file")
+      setIsPlaying(false)
     }
 
     audio.addEventListener("timeupdate", updateTime)
     audio.addEventListener("loadedmetadata", updateDuration)
     audio.addEventListener("ended", handleEnded)
+    audio.addEventListener("error", handleError)
 
     return () => {
       audio.removeEventListener("timeupdate", updateTime)
       audio.removeEventListener("loadedmetadata", updateDuration)
       audio.removeEventListener("ended", handleEnded)
+      audio.removeEventListener("error", handleError)
     }
   }, [currentTrack])
 
@@ -110,6 +127,7 @@ export function AudioPlayer() {
                   onClick={() => {
                     setCurrentTrack(index)
                     setIsPlaying(true)
+                    setError(null)
                   }}
                   className={`w-full text-left px-4 py-3 rounded-md transition-colors ${
                     currentTrack === index
@@ -127,6 +145,9 @@ export function AudioPlayer() {
             {/* Current Track Display */}
             <div className="mb-4">
               <p className="text-lg font-semibold text-center text-foreground">{tracks[currentTrack].title}</p>
+              {error && (
+                <p className="text-sm text-red-500 text-center mt-2">{error}</p>
+              )}
             </div>
 
             {/* Progress Bar */}
