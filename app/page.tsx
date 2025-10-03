@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import { HeroSection } from "@/components/hero-section"
 import { AudioPlayer } from "@/components/audio-player"
 import { SocialLinks } from "@/components/social-links"
@@ -7,7 +8,9 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <HeroSection />
-      <AudioPlayer />
+      <Suspense fallback={<div className="py-16 text-center">Loading audio player...</div>}>
+        <AudioPlayer />
+      </Suspense>
       <CreditsSection />
       <SocialLinks />
     </main>
