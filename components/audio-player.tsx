@@ -9,15 +9,15 @@ import { Card } from "@/components/ui/card"
 const tracks = [
   { 
     title: "Tickets at The Door", 
-    src: "/audio/Tickets at The Door.mp3"
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_hq0SjRl6Pjt9dseXmr8N57Xl3zT7/8WpKZgMXSfH8gsWNRZd8U4/public/audio/Tickets%20at%20The%20Door.mp3"
   },
   { 
     title: "Anna Rose", 
-    src: "/audio/Anna Rose.m4a"
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_hq0SjRl6Pjt9dseXmr8N57Xl3zT7/0-K5ANw6VWhsd5nd6yiUrG/public/audio/Anna%20Rose.m4a"
   },
   { 
     title: "Josie Run", 
-    src: "/audio/Josie Run.m4a"
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_hq0SjRl6Pjt9dseXmr8N57Xl3zT7/4ucGPjAsDyyBgYslmU7XS5/public/audio/Josie%20Run.m4a"
   },
 ]
 

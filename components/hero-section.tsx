@@ -24,22 +24,32 @@ export function HeroSection() {
 
           {/* Album Title */}
           <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl font-bold text-foreground">She Sings</h1>
-            <p className="text-3xl md:text-5xl font-serif italic text-primary">Tickets at the Door</p>
+            <h1 className="text-5xl md:text-7xl font-bold text-foreground">SheSings</h1>
+            <p className="text-3xl md:text-5xl font-cursive text-primary">Tickets at the Door</p>
           </div>
 
           {/* Release Date */}
-          <p className="text-xl md:text-2xl text-muted-foreground">Available Now</p>
+          <p className="text-xl md:text-2xl text-muted-foreground">Album Available Now</p>
 
-          {/* CTA Button */}
-          <div className="pt-4">
+          {/* CTA Buttons */}
+          <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
               className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground"
               asChild
             >
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                Listen on Spotify
+              <a href="https://linktr.ee/carolparkerschafer" target="_blank" rel="noopener noreferrer">
+                Listen Here
+              </a>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-lg px-8 py-6 border-2 border-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+              asChild
+            >
+              <a href="https://musicbycarol.square.site/" target="_blank" rel="noopener noreferrer">
+                Buy Here
               </a>
             </Button>
           </div>

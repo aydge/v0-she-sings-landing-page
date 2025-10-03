@@ -44,11 +44,6 @@ export function CreditsSection() {
               </Card>
             ))}
           </div>
-
-          {/* Footer */}
-          <div className="mt-16 text-center text-sm text-muted-foreground">
-            <p>© 2025 She Sings. All rights reserved.</p>
-          </div>
         </div>
       </div>
     </section>
