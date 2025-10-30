@@ -38,7 +38,7 @@ export function HeroSection() {
               className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground"
               asChild
             >
-              <a href="https://linktr.ee/carolparkerschafer" target="_blank" rel="noopener noreferrer">
+              <a href="https://digital-delivery-services.lnk.to/RpanuiryEM" target="_blank" rel="noopener noreferrer">
                 Listen Here
               </a>
             </Button>
