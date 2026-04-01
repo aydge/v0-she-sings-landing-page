@@ -4,7 +4,7 @@ import { Radio } from "lucide-react"
 const stations = [
   { name: "KSOI", location: "Iowa", url: null },
   { name: "WHUP", location: "Hillsborough, NC", url: null },
-  { name: "WCOMFM", location: "Carrboro, NC", url: null, note: "Home of Carolina Pines", noteUrl: "https://wcomfm.org/show/the-carolina-pines-radio-show/" },
+  { name: "WCOM", location: "Carrboro, NC", url: null, note: "Home of Carolina Pines", noteUrl: "https://wcomfm.org/show/the-carolina-pines-radio-show/" },
   { name: "Your Station?", location: "Accepting submissions", url: null, placeholder: true },
 ]
 
