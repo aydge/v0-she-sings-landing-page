@@ -4,7 +4,7 @@ import { Radio } from "lucide-react"
 const stations = [
   { name: "KSOI", location: "Iowa", url: null },
   { name: "WHUP", location: "Hillsborough, NC", url: null },
-  { name: "WCOMFM", location: "Carrboro, NC", url: "https://wcomfm.org/show/the-carolina-pines-radio-show/", note: "Home of Carolina Pines" },
+  { name: "WCOMFM", location: "Carrboro, NC", url: null, note: "Home of Carolina Pines", noteUrl: "https://wcomfm.org/show/the-carolina-pines-radio-show/" },
   { name: "Your Station?", location: "Accepting submissions", url: null, placeholder: true },
 ]
 
@@ -48,7 +48,18 @@ export function RadioSection() {
                 )}
                 <span className="text-xs text-muted-foreground">{station.location}</span>
                 {station.note && (
-                  <span className="text-xs text-primary font-medium">{station.note}</span>
+                  station.noteUrl ? (
+                    <a
+                      href={station.noteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-primary font-medium hover:underline"
+                    >
+                      {station.note}
+                    </a>
+                  ) : (
+                    <span className="text-xs text-primary font-medium">{station.note}</span>
+                  )
                 )}
               </Card>
             ))}
