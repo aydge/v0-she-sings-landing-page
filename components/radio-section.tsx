@@ -4,14 +4,18 @@ import { Radio } from "lucide-react"
 const stations = [
   { name: "KSOI", location: "Iowa", url: null },
   { name: "WHUP", location: "Hillsborough, NC", url: null },
-  { name: "WCLM", location: "Richmond, VA", url: "https://wclmradio.com", note: "Home of Carolina Pines" },
+  { name: "WCOMFM", location: "Carrboro, NC", url: null, note: "Home of Carolina Pines", noteUrl: "https://wcomfm.org/show/the-carolina-pines-radio-show/" },
   { name: "Your Station?", location: "Accepting submissions", url: null, placeholder: true },
 ]
 
 export function RadioSection() {
   return (
-    <section className="py-16 md:py-20 bg-secondary/30">
-      <div className="container mx-auto px-4">
+    <section className="relative py-16 md:py-20 bg-gradient-to-b from-primary/10 to-background overflow-hidden">
+      {/* Background texture overlay */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 bg-[url('/weathered-wood-texture.jpg')] bg-cover bg-center" />
+      </div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex items-center justify-center gap-2 mb-3">
             <Radio className="h-6 w-6 text-primary" />
@@ -44,7 +48,18 @@ export function RadioSection() {
                 )}
                 <span className="text-xs text-muted-foreground">{station.location}</span>
                 {station.note && (
-                  <span className="text-xs text-primary font-medium">{station.note}</span>
+                  station.noteUrl ? (
+                    <a
+                      href={station.noteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-primary font-medium hover:underline"
+                    >
+                      {station.note}
+                    </a>
+                  ) : (
+                    <span className="text-xs text-primary font-medium">{station.note}</span>
+                  )
                 )}
               </Card>
             ))}
