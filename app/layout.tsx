@@ -6,6 +6,7 @@ import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { Suspense } from "react"
+import { SiteNav } from "@/components/site-nav"
 
 import { Dancing_Script, PT_Sans as V0_Font_PT_Sans, Fira_Sans as V0_Font_Fira_Sans, Roboto_Slab as V0_Font_Roboto_Slab } from 'next/font/google'
 
@@ -22,8 +23,8 @@ const dancingScript = Dancing_Script({
 })
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
+  title: "SheSings",
+  description: "SheSings — Americana trio featuring Carol Parker Schafer. Tickets at the Door album available now.",
   generator: "v0.app",
 }
 
@@ -35,6 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} ${dancingScript.variable} ${_v0_fontVariables}`}>
+        <SiteNav />
         <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
         <Analytics />
       </body>

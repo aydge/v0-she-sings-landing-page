@@ -2,11 +2,16 @@ import { Card } from "@/components/ui/card"
 
 const credits = [
   {
-    category: "Band Members",
+    category: "The Band",
     items: [
       "Carol Parker Schafer: Lead Vocals, Rhythm Guitar, Banjo",
       "Tracy Parker: Harmony Vocals, Bass Guitar",
       "Susan Colwell: Harmony Vocals",
+    ],
+  },
+  {
+    category: "Contributing Artists",
+    items: [
       "Dewey Brown: Fiddle",
       "Robin Ruddy: Steel Guitar",
     ],
@@ -30,7 +35,7 @@ export function CreditsSection() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">Album Credits</h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {credits.map((section) => (
               <Card key={section.category} className="p-6 bg-card">
                 <h3 className="text-xl font-bold mb-4 text-primary">{section.category}</h3>

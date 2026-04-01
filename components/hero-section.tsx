@@ -56,13 +56,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Decorative floral elements */}
-      <div className="absolute top-8 right-8 opacity-20 hidden md:block">
-        <Image src="/baby-s-breath-flowers.jpg" alt="" width={200} height={200} className="rotate-12" />
-      </div>
-      <div className="absolute bottom-8 left-8 opacity-20 hidden md:block">
-        <Image src="/baby-s-breath-flowers.jpg" alt="" width={200} height={200} className="-rotate-12" />
-      </div>
+
     </section>
   )
 }
